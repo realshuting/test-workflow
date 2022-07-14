@@ -22,7 +22,8 @@ jobs:
       - name: Set Version
         run: |
           echo "GIT_VERSION=$(git describe --match "*.*.*" --always)" >> $GITHUB_ENV
-          
+
       - name: Print
+        run: echo  ${{ env.GIT_VERSION }}
         env:
           GIT_VERSION: ${{ env.GIT_VERSION }}
